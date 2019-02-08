@@ -13,14 +13,14 @@
     {% if title %}
         <title>Flask Blog - {{ title }}</title>
     {% else %}
-        <title>Flask Blog</title>
+        <title>Fresh Harvest</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">Flask Blog</a>
+          <a class="navbar-brand mr-4" href="/">Fresh Harvest</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -33,6 +33,16 @@
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
+
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+
                 <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
               {% else %}
@@ -61,12 +71,13 @@
         <div class="col-md-4">
           <div class="content-section">
             <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+            <p class='text-muted'>Our ready available markets.
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                <li class="list-group-item list-group-item-light">Nakasero</li>
+                <li class="list-group-item list-group-item-light">Owino</li>
+                <li class="list-group-item list-group-item-light">Nakawa</li>
+                <li class="list-group-item list-group-item-light">Kiseka</li>
+                <li class="list-group-item list-group-item-light">And More</li>
               </ul>
             </p>
           </div>
